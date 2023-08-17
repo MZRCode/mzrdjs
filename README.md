@@ -8,13 +8,12 @@
 ```js
 const mzr = require("mzrdjs")
 
-mzr.add(5, 10) // 5 ve 10 sayısını toplar.
-mzr.substract(10, 5) // 10'dan 5'i çıkartır.
-mzr.multiply(10, 5) // 10 ile 5'i çarpar.
-mzr.divide(10, 5) // 10'u 5'e böler.
-mzr.raise(5, 5) // 5'in 5 üssünü alır.
-mzr.random(5, 10) // 5 ve 10'da dahil olmak üzeri 5-10 arasında random sayı üretir.
-mzr.shortNumber(112394) // 112.3k olarak yansıtır 112000 olsaydı 112k olarak yansıtırdı.
+mzr.add(5, 10) // Adds 5 and 10.
+mzr.substract(10, 5) // Subtracts 5 from 10.
+mzr.multiply(10, 5) // Multiplies 10 by 5.
+mzr.divide(10, 5) // Divides 10 by 5.
+mzr.raise(5, 5) // Takes the 5th power of 5.
+mzr.random(5, 10) // Generates a random number between 5 and 10, inclusive.
+mzr.shortNumber(112394) // Represents 112394 as 112.3k; if it were 112000, it would be represented as 112k.
 ```
-
-Herhangi bir sorunuz varsa, [Discord sunucum](https://discord.gg/mzrdev) katılabilirsiniz.
+If you have any questions, you can join my [Discord server](https://discord.gg/mzrdev)."
