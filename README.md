@@ -1,7 +1,7 @@
 # MZR.djs
 ![Download](https://img.shields.io/npm/dt/mzrdjs.svg?style=flat-square) ![Download](https://img.shields.io/npm/dw/mzrdjs.svg?style=flat-square) ![Download](https://img.shields.io/npm/dm/mzrdjs.svg?style=flat-square) ![License](https://img.shields.io/npm/l/mzrdjs.svg?style=flat-square)
 
-# Examples 🇺🇸
+# Examples
 
 ```js
 const mzr = require("mzrdjs")
@@ -17,7 +17,7 @@ mzr.shortNumber(112394) // Represents 112394 as 112.3k; if it were 112000, it wo
 ```
 If you have any questions, you can join my [Discord server](https://discord.gg/mzrdev).
 
-# Örnekler 🇹🇷
+# Örnekler
 
 ```js
 const mzr = require("mzrdjs")
