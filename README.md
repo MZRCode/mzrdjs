@@ -13,6 +13,7 @@ mzr.substract(10, 5) // Subtracts 5 from 10.
 mzr.multiply(10, 5) // Multiplies 10 by 5.
 mzr.divide(10, 5) // Divides 10 by 5.
 mzr.raise(5, 5) // Takes the 5th power of 5.
+mzr.calculate(20, 200) // What percentage is number A of number B?
 mzr.random(5, 10) // Generates a random number between 5 and 10, inclusive.
 mzr.shortNumber(112394) // Represents 112394 as 112.3k; if it were 112000, it would be represented as 112k.
 ```
