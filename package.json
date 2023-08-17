@@ -18,8 +18,10 @@
     "math",
     "discordjs",
     "easy-number",
-    "calculate",
-    "raise"
+    "minecraft",
+    "minecraft-motd",
+    "minecraft-info",
+    "mc-motd"
   ],
   "license": "MIT",
   "main": "./src/index.js",
@@ -28,5 +30,5 @@
     "type": "git",
     "url": "git+https://github.com/MZRCode/mzrdjs.git"
   },
-  "version": "0.0.8"
+  "version": "0.0.9"
 }
