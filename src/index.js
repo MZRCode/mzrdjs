@@ -31,7 +31,7 @@ module.exports = {
     } else if (number>=1e27) {
         return parseFloat((number/1e27).toFixed(0))+'Oc';
     } else if (number>=1e24) {
-        return parseFloat((number/1e24).toFixed(0)) + 'Sp';
+        return parseFloat((number/1e24).toFixed(0))+'Sp';
     } else if (number>=1e21) {
         return parseFloat((number/1e21).toFixed(0))+'Sx';
     } else if (number>=1e18) {
