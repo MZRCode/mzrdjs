@@ -33,3 +33,52 @@ mzr.random(5, 10) // 5 ile 10 arasında (5 ve 10 dahil) rastgele bir sayı oluş
 mzr.shortNumber(112394) // 112394'ü 112.3k şeklinde yansıtılır. Eğer ki 112000 olsaydı 112k olarak yansıtılırdı.
 ```
 Herhangi bir sorunuz varsa, [Discord sunucuma](https://discord.gg/mzrdev) katılabilirsiniz.
+
+# Examples
+
+```js
+const mzr = require('mzrdjs');
+```
+## Add
+```js
+const add = mzr.add(5, 10);
+console.log(add); // 15
+```
+## Substract
+```js
+const substract = mzr.substract(10, 5);
+console.log(substract); // 5
+```
+## Multiply
+```js
+const multiply = mzr.multiply(7, 10);
+console.log(multiply); // 70
+```
+## Divide
+```js
+const divide = mzr.divide(50, 5);
+console.log(divide); // 10
+```
+## Raise
+```js
+const raise = mzr.raise(5, 5);
+console.log(raise); // 3125
+```
+## Calculate
+```js
+const calculate = mzr.calculate(20, 200);
+console.log(calculate); // 10
+```
+## Random
+```js
+const random = mzr.random(5, 10);
+console.log(random); // 5, 6, 7, 8, 9, 10
+```
+## ShortNumber
+```js
+const shortNumber = mzr.shortNumber(28475);
+console.log(shortNumber); // 28.4k
+
+var shortNumber2 = mzr.shortNumber(28000);
+console.log(shortNumber2); // 28k
+```
