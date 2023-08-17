@@ -16,4 +16,4 @@ mzr.raise(5, 5) // Takes the 5th power of 5.
 mzr.random(5, 10) // Generates a random number between 5 and 10, inclusive.
 mzr.shortNumber(112394) // Represents 112394 as 112.3k; if it were 112000, it would be represented as 112k.
 ```
-If you have any questions, you can join my [Discord server](https://discord.gg/mzrdev)."
+If you have any questions, you can join my [Discord server](https://discord.gg/mzrdev).
