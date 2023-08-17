@@ -1,13 +1,4 @@
 module.exports = {
-  add: function(value,value2) {
-    return value+value2
-  },
-  substract: function(value,value2) {
-    return value-value2
-  },
-  multiply: function(value,value2) {
-    return value*value2
-  },
   divide: function(value,value2) {
     return value/value2
   },
@@ -16,7 +7,7 @@ module.exports = {
   },
   calculate: function(value,value2) {
     if (value2===0) {
-      throw new Error("Second value cannot be \"0\" for percentage calculation.");
+      throw new TypeError("Second value cannot be \"0\" for percentage calculation.");
   }
   return (value/value2)*100;
   },
@@ -48,5 +39,11 @@ module.exports = {
         return parseFloat((number/1e3).toFixed(1))+'k';
     }
     return number.toString();
+  },
+  mcmotd: function(ip) {
+    if (ip.length<10) {
+      throw new TypeError("The typed Minecraft ip cannot be shorter than \"10\" characters.");
+    }
+    return `http://status.mclive.eu/${ip}/${ip}/25565/banner.png`
   }
 }
