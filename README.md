@@ -4,9 +4,9 @@
 
 # What's new in 0.0.10?
 - Fixed Bugs
-- Removed Add function
-- Removed Substract function
-- Removed Multiply function
+- Removed Add [+] function
+- Removed Substract [-] function
+- Removed Multiply [*] function
 - Added Minceraft illustrated + colored motd system!
 
 # Features
