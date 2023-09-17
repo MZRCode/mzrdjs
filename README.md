@@ -1,5 +1,3 @@
-# MZR.djs
-
 <div align="center">
 <p>
    <a href="https://nodei.co/npm/mzrdjs/"><img src="https://nodei.co/npm/mzrdjs.png?downloads=true&stars=true" alt="NPM info" /></a>
