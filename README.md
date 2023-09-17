@@ -2,7 +2,7 @@
 
 <div align="center">
 <p>
-   <a href="https://nodei.co/npm/mzrdjs/"><img src="https://nodei.co/npm/selfbot-discord.png?downloads=true&stars=true" alt="NPM info" /></a>
+   <a href="https://nodei.co/npm/mzrdjs/"><img src="https://nodei.co/npm/mzrdjs.png?downloads=true&stars=true" alt="NPM info" /></a>
  </p>
 <p>
     <a href="https://www.npmjs.com/package/mzrdjs"><img src="https://img.shields.io/npm/dt/mzrdjs.svg?style=flat-square" alt="Download" /></a>
