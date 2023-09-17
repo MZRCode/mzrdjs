@@ -1,6 +1,4 @@
 # MZR.djs
-
-![Download](https://img.shields.io/npm/dt/mzrdjs.svg?style=flat-square) ![Download](https://img.shields.io/npm/dw/mzrdjs.svg?style=flat-square) ![Download](https://img.shields.io/npm/dm/mzrdjs.svg?style=flat-square) ![License](https://img.shields.io/npm/l/mzrdjs.svg?style=flat-square)
 <div align="center">
 <p>
     <a href="https://www.npmjs.com/package/mzrdjs"><img src="https://img.shields.io/npm/dt/mzrdjs.svg?style=flat-square" alt="Download" /></a>
