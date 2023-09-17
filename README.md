@@ -10,25 +10,20 @@
  </p>
 </div>
 
-# What's new in 0.0.10?
-- Fixed Bugs
-- Removed Add [+] function
-- Removed Substract [-] function
-- Removed Multiply [*] function
-- Added Minceraft illustrated + colored motd system!
+# What's new in 0.0.12?
+- README file updated
 
 # Features
 
 ```js
-const mzr = require("mzrdjs")
+const djs = require("mzrdjs")
 
-mzr.divide(10, 5) // Divides 10 by 5.
-mzr.raise(5, 5) // Takes the 5th power of 5.
-mzr.calculate(20, 200) // What percentage is number A of number B?
-mzr.random(5, 10) // Generates a random number between 5 and 10, inclusive.
-mzr.shortNumber(112394) // Represents 112394 as 112.3k; if it were 112000, it would be represented as 112k.
-mzr.mcmotd('serverIp') // Generates illustrated and colored MOTD for Minceraft servers.
-// When using the McMotd function, i recommend writing it in the .setImage in the embed.
+djs.divide(10, 5) // Divides 10 by 5.
+djs.raise(5, 5) // Takes the 5th power of 5.
+djs.calculate(20, 200) // What percentage is number A of number B?
+djs.random(5, 10) // Generates a random number between 5 and 10, inclusive.
+djs.shortNumber(112394) // Represents 112394 as 112.3k; if it were 112000, it would be represented as 112k.
+djs.mcmotd('serverIp') // Generates illustrated and colored MOTD for Minceraft servers. (When using the McMotd function, i recommend writing it in the .setImage in the embed.)
 ```
 If you have any questions, you can join my [Discord server](https://discord.gg/mzrdev).
 
@@ -36,15 +31,14 @@ If you have any questions, you can join my [Discord server](https://discord.gg/m
 # Özellikler
 
 ```js
-const mzr = require("mzrdjs")
+const djs = require("mzrdjs")
 
-mzr.divide(10, 5) // 10'u 5'e böler.
-mzr.raise(5, 5) // 5'in 5. üssünü alır.
-mzr.calculate(20, 100) // A sayısı, B sayısının yüzde kaçıdır?
-mzr.random(5, 10) // 5 ile 10 arasında (5 ve 10 dahil) rastgele bir sayı oluşturur.
-mzr.shortNumber(112394) // 112394'ü 112.3k şeklinde yansıtılır. Eğer ki 112000 olsaydı 112k olarak yansıtılırdı.
-mzr.mcmotd('serverIp') // Minecraft sunucuları için resimli ve renkli MOTD oluşturur.
-// McMotd fonksyonunu kullanırken, bunu embed içindeki .setImage içine yazmanızı öneririm.
+djs.divide(10, 5) // 10'u 5'e böler.
+djs.raise(5, 5) // 5'in 5. üssünü alır.
+djs.calculate(20, 100) // A sayısı, B sayısının yüzde kaçıdır?
+djs.random(5, 10) // 5 ile 10 arasında (5 ve 10 dahil) rastgele bir sayı oluşturur.
+djs.shortNumber(112394) // 112394'ü 112.3k şeklinde yansıtılır. Eğer ki 112000 olsaydı 112k olarak yansıtılırdı.
+djs.mcmotd('serverIp') // Minecraft sunucuları için resimli ve renkli MOTD oluşturur. (McMotd fonksyonunu kullanırken, bunu embed içindeki .setImage içine yazmanızı öneririm.)
 ```
 Herhangi bir sorunuz varsa, [Discord sunucuma](https://discord.gg/mzrdev) katılabilirsiniz.
 
@@ -52,34 +46,34 @@ Herhangi bir sorunuz varsa, [Discord sunucuma](https://discord.gg/mzrdev) katıl
 
 ## Divide
 ```js
-const divide = mzr.divide(50, 5);
+const divide = djs.divide(50, 5);
 console.log(divide); // 10
 ```
 ## Raise
 ```js
-const raise = mzr.raise(5, 5);
-console.log(raise); // 3125
+const raise = djs.raise(5, 5);
+console.log(raise); // 3125 (5x5x5x5x5)
 ```
 ## Calculate
 ```js
-const calculate = mzr.calculate(20, 200);
+const calculate = djs.calculate(20, 200);
 console.log(calculate); // 10
 ```
 ## Random
 ```js
-const random = mzr.random(5, 10);
+const random = djs.random(5, 10);
 console.log(random); // 5, 6, 7, 8, 9, 10
 ```
 ## ShortNumber
 ```js
-const shortNumber = mzr.shortNumber(28475);
+const shortNumber = djs.shortNumber(28475);
 console.log(shortNumber); // 28.4k
 
-var shortNumber2 = mzr.shortNumber(28000);
+var shortNumber2 = djs.shortNumber(28000);
 console.log(shortNumber2); // 28k
 ```
-## McMotd
+# McMotd
 ```js
-var serverIp = mzr.mcmotd('play.hypixel.net');
-console.log(serverIp); // Hypixel's illustrated + colored MOTD
+var serverIp = djs.mcmotd('play.hypixel.net');
+console.log(serverIp); // Hypixel Motd
 ```
