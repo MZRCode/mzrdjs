@@ -1,6 +1,11 @@
 # MZR.djs
 
 ![Download](https://img.shields.io/npm/dt/mzrdjs.svg?style=flat-square) ![Download](https://img.shields.io/npm/dw/mzrdjs.svg?style=flat-square) ![Download](https://img.shields.io/npm/dm/mzrdjs.svg?style=flat-square) ![License](https://img.shields.io/npm/l/mzrdjs.svg?style=flat-square)
+<div align="center">
+<p>
+   <a href="https://nodei.co/npm/selfbot-discord/"><img src="https://nodei.co/npm/selfbot-discord.png?downloads=true&stars=true" alt="NPM info" /></a>
+ </p>
+</div>
 
 # What's new in 0.0.10?
 - Fixed Bugs
