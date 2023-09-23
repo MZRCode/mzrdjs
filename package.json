@@ -7,7 +7,7 @@
   },
   "bundleDependencies": false,
   "deprecated": false,
-  "description": "Bir çok işe yarayan çok kapsamlı bir modül.",
+  "description": "A very comprehensive module that does a lot of things",
   "homepage": "https://github.com/MZRCode/mzrdjs#readme",
   "keywords": [
     "djs",
@@ -21,7 +21,15 @@
     "minecraft",
     "minecraft-motd",
     "minecraft-info",
-    "mc-motd"
+    "mc-motd",
+    "ms",
+    "tr-ms",
+    "ms-short",
+    "ms-short",
+    "ms-tr",
+    "ms-en",
+    "timestamp",
+    "dc-timestamp"
   ],
   "license": "MIT",
   "main": "./file/index.js",
@@ -31,5 +39,5 @@
     "type": "git",
     "url": "git+https://github.com/MZRCode/mzrdjs.git"
   },
-  "version": "0.0.12"
+  "version": "0.0.14"
 }
