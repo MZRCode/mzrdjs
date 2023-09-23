@@ -10,49 +10,51 @@
  </p>
 </div>
 
-# What's new in 0.0.12?
-- README file updated
+# What's new in 0.0.13?
+- Added mzrdjs module versioning!
+- Added Discord Timestamp!!!
+- Removed split function!
+- raise function removed!
+- addNumberDot function added!
+- MS System added!!! (Turkish and English language supported)
 
 # Features
 
 ```js
 const djs = require("mzrdjs")
 
-djs.divide(10, 5) // Divides 10 by 5.
-djs.raise(5, 5) // Takes the 5th power of 5.
-djs.calculate(20, 200) // What percentage is number A of number B?
+djs.version // reflects the version of mzrdjs.
+djs.calculate(20, 200) // It takes the percentage of the number A to the number B.
 djs.random(5, 10) // Generates a random number between 5 and 10, inclusive.
-djs.shortNumber(112394) // Represents 112394 as 112.3k; if it were 112000, it would be represented as 112k.
-djs.mcmotd('serverIp') // Generates illustrated and colored MOTD for Minceraft servers. (When using the McMotd function, i recommend writing it in the .setImage in the embed.)
+djs.shortNumber(112394) // Represents 112394 as 112.3k; 112000 it would be represented as 112k.
+djs.mcmotd('serverIp') // Generates illustrated and colored MOTD for Minceraft servers.
+djs.timestamp(1695495014935) // Changed the normal timestamp to the timestamp for Discord.
+djs.addNumberDot(12381248125) // The numbers will be more readable because it adds a dot.
+djs.ms(60000, { short: true, lang: 'en', ms: true }) // {} is not mandatory. Only supports turkish (tr) and english (en) languages.
 ```
-If you have any questions, you can join my [Discord server](https://discord.gg/mzrdev).
-
+If you have any questions, you can join my [Discord server](https://discord.gg/ktVdQYrtXF).
 
 # Özellikler
 
 ```js
 const djs = require("mzrdjs")
 
-djs.divide(10, 5) // 10'u 5'e böler.
-djs.raise(5, 5) // 5'in 5. üssünü alır.
-djs.calculate(20, 100) // A sayısı, B sayısının yüzde kaçıdır?
+djs.version // mzrdjs sürümünü yansıtır.
+djs.calculate(20, 100) // A sayısının B sayısına yüzdesini alır.
 djs.random(5, 10) // 5 ile 10 arasında (5 ve 10 dahil) rastgele bir sayı oluşturur.
-djs.shortNumber(112394) // 112394'ü 112.3k şeklinde yansıtılır. Eğer ki 112000 olsaydı 112k olarak yansıtılırdı.
-djs.mcmotd('serverIp') // Minecraft sunucuları için resimli ve renkli MOTD oluşturur. (McMotd fonksyonunu kullanırken, bunu embed içindeki .setImage içine yazmanızı öneririm.)
+djs.shortNumber(112394) // 112394'ü 112.3k şeklinde yansıtılır. 112000 olsaydı 112k olarak yansırdı.
+djs.mcmotd('serverIp') // Minecraft sunucuları için resimli ve renkli MOTD oluşturur.
+djs.timestamp(1695495014935) // Normal timestamp'i Discord için olan timestamp'e çevirir.
+djs.addNumberDot(12381248125) // Sayılara düzgün bir şekilde olacak şekilde nokta ekler.
+djs.ms(60000, { short: true, lang: 'tr', ms: true }) // {} içinde olanlar zorunlu değildir. Sadece tr ve en dillerini destekler.
 ```
-Herhangi bir sorunuz varsa, [Discord sunucuma](https://discord.gg/mzrdev) katılabilirsiniz.
+Herhangi bir sorunuz varsa, [Discord sunucuma](https://discord.gg/ktVdQYrtXF) katılabilirsiniz.
 
 # Examples
 
-## Divide
+## Version
 ```js
-const divide = djs.divide(50, 5);
-console.log(divide); // 10
-```
-## Raise
-```js
-const raise = djs.raise(5, 5);
-console.log(raise); // 3125 (5x5x5x5x5)
+console.log(djs.version); // 0.0.13
 ```
 ## Calculate
 ```js
@@ -64,7 +66,7 @@ console.log(calculate); // 10
 const random = djs.random(5, 10);
 console.log(random); // 5, 6, 7, 8, 9, 10
 ```
-## ShortNumber
+## Short Number
 ```js
 const shortNumber = djs.shortNumber(28475);
 console.log(shortNumber); // 28.4k
@@ -72,8 +74,29 @@ console.log(shortNumber); // 28.4k
 var shortNumber2 = djs.shortNumber(28000);
 console.log(shortNumber2); // 28k
 ```
-# McMotd
+## McMotd
 ```js
 var serverIp = djs.mcmotd('play.hypixel.net');
 console.log(serverIp); // Hypixel Motd
+```
+## Timestamp
+```js
+var timestamp = djs.timestamp(1695495014935);
+console.log(timestamp); // 1695495014, <t:1695495014:R> = x xxx ago
+```
+## Add Number Dot
+```js
+var addNumberDot = djs.addNumberDot(12381248125);
+console.log(addNumberDot); // 12.381.248.125
+```
+## MS
+```js
+const time = 90300; // 1 minute 30 seconds (In milliseconds)
+
+var ms1 = djs.ms(time) // 1 minutes 30 seconds
+var ms2 = djs.ms(time, { short: true }) // 1m 30s
+var ms3 = djs.ms(time, { lang: 'tr' }) // 1 dakika 30 saniye
+var ms4 = djs.ms(time, { ms: true }) // 1 minutes 30 seconds 300 milliseconds
+var ms5 = djs.ms(time, { short: true, lang: 'tr', ms: true }) // 1dk 30sn 300ms
+var ms6 = djs.ms(time, { short: true, lang: 'en', ms: true }) // 1m 30s 300ms
 ```
