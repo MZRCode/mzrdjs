@@ -14,7 +14,7 @@
 - Added mzrdjs module versioning!
 - Added Discord Timestamp!!!
 - Removed split function!
-- Removed reiase function!
+- Removed raise function!
 - addNumberDot function added!
 - MS System added!!! (Turkish and English language supported)
 
@@ -95,10 +95,10 @@ console.log(addNumberDot); // 12.381.248.125
 ```js
 const time = 90300; // 1 minute 30 seconds (In milliseconds)
 
-var ms1 = mzr.ms(time) // 1 minutes 30 seconds
-var ms2 = mzr.ms(time, { short: true }) // 1m 30s
-var ms3 = mzr.ms(time, { lang: 'tr' }) // 1 dakika 30 saniye
-var ms4 = mzr.ms(time, { ms: true }) // 1 minutes 30 seconds 300 milliseconds
-var ms5 = mzr.ms(time, { short: true, lang: 'tr', ms: true }) // 1dk 30sn 300ms
-var ms6 = mzr.ms(time, { short: true, lang: 'en', ms: true }) // 1m 30s 300ms
+mzr.ms(time) // 1 minutes 30 seconds
+mzr.ms(time, { short: true }) // 1m 30s
+mzr.ms(time, { lang: 'tr' }) // 1 dakika 30 saniye
+mzr.ms(time, { ms: true }) // 1 minutes 30 seconds 300 milliseconds
+mzr.ms(time, { short: true, lang: 'tr', ms: true }) // 1dk 30sn 300ms
+mzr.ms(time, { short: true, lang: 'en', ms: true }) // 1m 30s 300ms
 ```
