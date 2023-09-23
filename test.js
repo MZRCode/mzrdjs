@@ -1,41 +1,43 @@
-const djs = require('./file/index');
-const token = 'mzr';
+const mzr = require('./file/index');
 
 setTimeout(() => {
-    var sonuc = djs.divide(50, 10);
-    console.log(sonuc + ' Divide ✔')
+    var sonuc = mzr.calculate(10, 100);
+    console.log('%' + sonuc + ' Percent ✔')
 }, 1000);
 
 setTimeout(() => {
-    var sonuc = djs.raise(5, 5);
-    console.log(sonuc + ' Raise ✔')
+    var sonuc = mzr.random(10, 5);
+    console.log(sonuc)
+}, 1500);
+
+setTimeout(() => {
+    var sonuc = mzr.shortNumber(7403);
+    console.log(sonuc + ' ShortNumber ✔')
 }, 2000);
 
 setTimeout(() => {
-    var sonuc = djs.calculate(10, 100);
-    console.log('%' + sonuc + ' Percent ✔')
+    var sonuc = mzr.mcmotd(`play.craftrise.tc`)
+    console.log(sonuc + ' MC Motd ✔')
+}, 2500);
+
+setTimeout(() => {
+    var sonuc = mzr.version;
+    console.log(sonuc  + ' Version ✔')
 }, 3000);
 
 setTimeout(() => {
-    var sonuc = djs.random(10, 5);
-    console.log(sonuc + ' Random ✔')
-}, 4000);
-
-setTimeout(() => {
-    var sonuc = djs.shortNumber(7403);
-    console.log(sonuc + ' ShortNumber ✔')
-}, 5000);
-
-setTimeout(() => {
-    var sonuc = djs.mcmotd(`play.craftrise.tc`)
+    var sonuc = mzr.addNumberDot(12381248125);
     console.log(sonuc)
-}, 6000);
+}, 3500);
 
 setTimeout(() => {
-    djs.slashBuilder;
-}, 7000);
-
-setTimeout(() => {
-    var sonuc = djs.version;
+    const sure = 1695495014935;
+    var sonuc = mzr.timestamp(sure)
     console.log(sonuc)
-}, 8000);
+}, 4000)
+
+setTimeout(() => {
+    const sure = 90300;
+    var sonuc = mzr.ms(sure, { short: true, lang: 'tr', ms: true });
+    console.log(sonuc + ' MS ✔')
+}, 4500);
