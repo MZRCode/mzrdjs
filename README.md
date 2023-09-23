@@ -14,7 +14,7 @@
 - Added mzrdjs module versioning!
 - Added Discord Timestamp!!!
 - Removed split function!
-- raise function removed!
+- Removed reiase function!
 - addNumberDot function added!
 - MS System added!!! (Turkish and English language supported)
 
