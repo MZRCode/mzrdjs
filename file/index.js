@@ -46,9 +46,6 @@ module.exports = {
     }
     return `http://status.mclive.eu/${ip}/${ip}/25565/banner.png`
   },
-  get slashBuilder() { // Only my youtube channel code you not use :)
-    return console.log('Bu altyapının sahibi MZR\'dir. Satılması ve Paylaşılması kesinlikle yasaktır!');
-  },
   get version() {
     try {
       const version = require('../../mzrdjs/package.json').version;
