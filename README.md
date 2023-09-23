@@ -60,26 +60,20 @@ console.log(mzr.version); // 0.0.13
 ```
 ## Calculate
 ```js
-const calculate = mzr.calculate(20, 200);
-console.log(calculate); // 10
+mzr.calculate(20, 200); // 10
 ```
 ## Random
 ```js
-const random = mzr.random(5, 10);
-console.log(random); // 5, 6, 7, 8, 9, 10
+mzr.random(5, 10); // 5, 6, 7, 8, 9, 10
 ```
 ## Short Number
 ```js
-const shortNumber = mzr.shortNumber(28475);
-console.log(shortNumber); // 28.4k
-
-var shortNumber2 = mzr.shortNumber(28000);
-console.log(shortNumber2); // 28k
+mzr.shortNumber(28475); // 28.4k
+mzr.shortNumber(28000); // 28k
 ```
 ## McMotd
 ```js
-var serverIp = mzr.mcmotd('play.hypixel.net');
-console.log(serverIp); // Hypixel Motd
+mzr.mcmotd('play.hypixel.net'); // Hypixel Motd
 ```
 ## Timestamp
 ```js
