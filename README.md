@@ -30,7 +30,7 @@ mzr.shortNumber(112394) // Represents 112394 as 112.3k; 112000 it would be repre
 mzr.mcmotd('serverIp') // Generates illustrated and colored MOTD for Minceraft servers.
 mzr.timestamp(1695495014935) // Changed the normal timestamp to the timestamp for Discord.
 mzr.addNumberDot(12381248125) // The numbers will be more readable because it adds a dot.
-mzr.ms(60000, { short: true, lang: 'en', ms: true }) // {} is not mandatory. Only supports turkish (tr) and english (en) languages.
+mzr.ms(60000, { short: true, lang: 'en', ms: true }) // {} is not mandatory. Supports Turkish (TR) and English (EN) languages.
 ```
 If you have any questions, you can join my [Discord server](https://discord.gg/ktVdQYrtXF).
 
@@ -46,7 +46,7 @@ mzr.shortNumber(112394) // 112394'ü 112.3k şeklinde yansıtılır. 112000 olsa
 mzr.mcmotd('serverIp') // Minecraft sunucuları için resimli ve renkli MOTD oluşturur.
 mzr.timestamp(1695495014935) // Normal timestamp'i Discord için olan timestamp'e çevirir.
 mzr.addNumberDot(12381248125) // Sayılara düzgün bir şekilde olacak şekilde nokta ekler.
-mzr.ms(60000, { short: true, lang: 'tr', ms: true }) // {} içinde olanlar zorunlu değildir. Sadece tr ve en dillerini destekler.
+mzr.ms(60000, { short: true, lang: 'tr', ms: true }) // {} içinde olanlar zorunlu değildir. TR ve EN dillerini destekler.
 ```
 Herhangi bir sorunuz varsa, [Discord sunucuma](https://discord.gg/ktVdQYrtXF) katılabilirsiniz.
 
