@@ -77,7 +77,7 @@ mzr.mcmotd('play.hypixel.net'); // Hypixel Motd
 ```
 ## Timestamp
 ```js
-var timestamp = mzr.timestamp(1695495014935); // 1695495014, <t:1695495014:R> = x xxx ago
+mzr.timestamp(1695495014935); // 1695495014, <t:1695495014:R> = x xxx ago
 ```
 ## Add Number Dot
 ```js
