@@ -16,7 +16,7 @@
 - Removed split function!
 - Removed raise function!
 - Added addNumberDot function!
-- MS System added!!! (Turkish and English languages supported)
+- MS System added! (Turkish and English languages supported)
 
 # Features
 
