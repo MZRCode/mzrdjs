@@ -11,8 +11,8 @@
 </div>
 
 # What's new in 0.0.14?
-- Added getting mzrdjs version!İ
-- Added Discord Timestamp!!!
+- Added getting mzrdjs version!
+- Added Discord Timestamp!
 - Removed split function!
 - Removed raise function!
 - Added addNumberDot function!
