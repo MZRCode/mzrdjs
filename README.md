@@ -46,7 +46,7 @@ mzr.shortNumber(112394) // 112394'ü 112.3k şeklinde yansıtılır. 112000 olsa
 mzr.mcmotd('serverIp') // Minecraft sunucuları için resimli ve renkli MOTD oluşturur.
 mzr.timestamp(1695495014935) // Normal timestamp'i Discord için olan timestamp'e çevirir.
 mzr.addNumberDot(12381248125) // Sayılara düzgün bir şekilde olacak şekilde nokta ekler.
-mzr.ms(60000, { short: true, lang: 'tr', ms: true }) // {} içinde olanlar zorunlu değildir. TR ve EN dillerini destekler.
+mzr.ms(60000, { short: true, lang: 'tr', ms: true }) // {} içinde olanlar zorunlu değildir. Türkçe (TR) ve İngilizce (EN) dillerini destekler.
 ```
 Herhangi bir sorunuz varsa, [Discord sunucuma](https://discord.gg/ktVdQYrtXF) katılabilirsiniz.
 
