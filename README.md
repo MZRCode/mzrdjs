@@ -10,13 +10,13 @@
  </p>
 </div>
 
-# What's new in 0.0.13?
-- Added mzrdjs module versioning!
+# What's new in 0.0.14?
+- Added getting mzrdjs version!İ
 - Added Discord Timestamp!!!
 - Removed split function!
 - Removed raise function!
-- addNumberDot function added!
-- MS System added!!! (Turkish and English language supported)
+- Added addNumberDot function!
+- MS System added!!! (Turkish and English languages supported)
 
 # Features
 
@@ -56,7 +56,7 @@ const mzr = require('mzrdjs');
 ```
 ## Version
 ```js
-console.log(mzr.version); // 0.0.13
+console.log(mzr.version); // 0.0.14
 ```
 ## Calculate
 ```js
