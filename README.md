@@ -83,13 +83,11 @@ console.log(serverIp); // Hypixel Motd
 ```
 ## Timestamp
 ```js
-var timestamp = mzr.timestamp(1695495014935);
-console.log(timestamp); // 1695495014, <t:1695495014:R> = x xxx ago
+var timestamp = mzr.timestamp(1695495014935); // 1695495014, <t:1695495014:R> = x xxx ago
 ```
 ## Add Number Dot
 ```js
-var addNumberDot = mzr.addNumberDot(12381248125);
-console.log(addNumberDot); // 12.381.248.125
+mzr.addNumberDot(12381248125); // 12.381.248.125
 ```
 ## MS
 ```js
