@@ -10,13 +10,12 @@
  </p>
 </div>
 
-# What's new in 0.0.14?
-- Added getting mzrdjs version!
-- Added Discord Timestamp!
-- Removed split function!
-- Removed raise function!
-- Added addNumberDot function!
-- Added MS System! (Turkish and English languages supported)
+# What's new in 0.0.15?
+- Added converting string time to milliseconds! 
+- Fixed bugs in types!
+- Fixed bugs in short ms!
+- Fixed bugs in long ms!
+- Re-named addNumberDot function to formatNumber!
 
 # Features
 
@@ -29,8 +28,9 @@ mzr.random(5, 10) // Generates a random number between 5 and 10, inclusive.
 mzr.shortNumber(112394) // Represents 112394 as 112.3k; 112000 it would be represented as 112k.
 mzr.mcmotd('serverIp') // Generates illustrated and colored MOTD for Minceraft servers.
 mzr.timestamp(1695495014935) // Changed the normal timestamp to the timestamp for Discord.
-mzr.addNumberDot(12381248125) // The numbers will be more readable because it adds a dot.
+mzr.formatNumber(12381248125) // The numbers will be more readable because it adds a dot.
 mzr.ms(60000, { short: true, lang: 'en', ms: true }) // {} is not mandatory. Supports Turkish (TR) and English (EN) languages.
+mzr.ms('1m') // Converts the time unit you specify to milliseconds.
 ```
 If you have any questions, you can join my [Discord server](https://discord.gg/ktVdQYrtXF).
 
@@ -45,8 +45,9 @@ mzr.random(5, 10) // 5 ile 10 arasında (5 ve 10 dahil) rastgele bir sayı oluş
 mzr.shortNumber(112394) // 112394'ü 112.3k şeklinde yansıtılır. 112000 olsaydı 112k olarak yansırdı.
 mzr.mcmotd('serverIp') // Minecraft sunucuları için resimli ve renkli MOTD oluşturur.
 mzr.timestamp(1695495014935) // Normal timestamp'i Discord için olan timestamp'e çevirir.
-mzr.addNumberDot(12381248125) // Sayılara düzgün bir şekilde olacak şekilde nokta ekler.
+mzr.formatNumber(12381248125) // Sayılara düzgün bir şekilde olacak şekilde nokta ekler.
 mzr.ms(60000, { short: true, lang: 'tr', ms: true }) // {} içinde olanlar zorunlu değildir. Türkçe (TR) ve İngilizce (EN) dillerini destekler.
+mzr.ms('1dk') // Belirlediğiniz zaman birimini milisaniyeye çevirir.
 ```
 Herhangi bir sorunuz varsa, [Discord sunucuma](https://discord.gg/ktVdQYrtXF) katılabilirsiniz.
 
@@ -81,7 +82,7 @@ mzr.timestamp(1695495014935); // 1695495014, <t:1695495014:R> = x xxx ago
 ```
 ## Add Number Dot
 ```js
-mzr.addNumberDot(12381248125); // 12.381.248.125
+mzr.formatNumber(12381248125); // 12.381.248.125
 ```
 ## MS
 ```js
