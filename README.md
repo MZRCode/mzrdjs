@@ -85,12 +85,15 @@ mzr.addNumberDot(12381248125); // 12.381.248.125
 ```
 ## MS
 ```js
-const time = 90300; // 1 minute 30 seconds (In milliseconds)
+// Valid times: [ms, s, m, h, d, w, y]
+// Geçerli Zamanlar: [ms, sn, dk, sa, g, hf, y] (sa = saat, g = gün, hf = hafta, y = yıl)
 
-mzr.ms(time) // 1 minutes 30 seconds
-mzr.ms(time, { short: true }) // 1m 30s
-mzr.ms(time, { lang: 'tr' }) // 1 dakika 30 saniye
-mzr.ms(time, { ms: true }) // 1 minutes 30 seconds 300 milliseconds
-mzr.ms(time, { short: true, lang: 'tr', ms: true }) // 1dk 30sn 300ms
-mzr.ms(time, { short: true, lang: 'en', ms: true }) // 1m 30s 300ms
+mzr.ms('1.5m') // 90000
+mzr.ms('1.5dk') // 90000
+mzr.ms(90300) // 1 minutes 30 seconds
+mzr.ms(90300, { short: true }) // 1m 30s
+mzr.ms(90300, { lang: 'tr' }) // 1 dakika 30 saniye
+mzr.ms(90300, { ms: true }) // 1 minutes 30 seconds 300 milliseconds
+mzr.ms(90300, { short: true, lang: 'tr', ms: true }) // 1dk 30sn 300ms
+mzr.ms(90300, { short: true, lang: 'en', ms: true }) // 1m 30s 300ms
 ```
