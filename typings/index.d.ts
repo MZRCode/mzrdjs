@@ -11,7 +11,7 @@ declare const mzrdjs: {
     mcmotd: (ip: string) => string;
     addNumberDot: (input: number) => string;
     timestamp: (time: number) => number;
-    ms: (value: string, options: Options) => string;
+    ms: (value: string | number, options: Options) => string | number;
     version: string;
 }
   
