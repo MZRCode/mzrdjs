@@ -5,9 +5,11 @@ module.exports = {
   }
   return (value / value2) * 100;
   },
+
   random: function(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   },
+
   shortNumber: function(number) {
     if (number >= 1e36) {
         return parseFloat((number / 1e33).toFixed(0)) + 'Dc';
@@ -34,13 +36,15 @@ module.exports = {
     }
     return number.toString();
   },
+
   mcmotd: function(ip) {
     if (ip.length < 10) {
       throw new Error("The typed Minecraft ip cannot be shorter than \"10\" characters.");
     }
     return `http://status.mclive.eu/${ip}/${ip}/25565/banner.png`
   },
-  addNumberDot: function(number) {
+
+  formatNumber: function(number) {
     const formattedNumber = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
     if (formattedNumber.length > 21) {
@@ -49,6 +53,7 @@ module.exports = {
   return formattedNumber;
     };
   },
+
   get version() {
     try {
       const version = require('../../mzrdjs/package.json').version;
@@ -62,129 +67,174 @@ module.exports = {
       }
     }
   },
+
   timestamp: function(time) {
     return parseInt(time / 1000);
   },
+
   ms: function(value, options) {
     options = options || {};
-    var type = typeof value;
-    var lang = options.lang || 'en';
-    var showMS = options.ms || false;
+    let type = typeof value;
+    let lang = options.lang || 'en';
+    let showMS = options.ms || false;
     if (type === 'string' && value.length > 0) {
-      throw new Error("You have to enter it as a number, not as string!")
+      return ayıkla(value)
     } else if (type === 'number' && isFinite(value)) {
-      var shorts = options.short || false;
+      let shorts = options.short || false;
       return shorts ? short(value, lang, showMS) : long(value, lang, showMS);
     }
+    throw new Error('value is not a non-empty string or a valid number! value = ' + JSON.stringify(value));
   },
+};
+
+let s = 1000;
+let m = s * 60;
+let h = m * 60;
+let d = h * 24;
+let w = d * 7;
+let mo = d * 30;
+let y = d * 365;
+
+function ayıkla(string) {
+  string = String(string);
+  if (string.length > 100) {
+    return;
+  }
+  var desteklenen = /^(-?(?:\d+)?\.?\d+) *(milliseconds?|milisaniye?|msecs?|ms|seconds?|saniye?|secs?|sn?|s|minutes?|dakika?|mins?|dk?|m|hours?|saat?|hrs?|sa?|h|days?|gün?|gun?|g?|d|weeks?|hafta?|hf?|w|months?|month?|mo?|ay|years?|yıl?|yil?|yrs?|y)?$/i.exec(
+    string
+  );
+  if (!desteklenen) {
+    return;
+  }
+  var n = parseFloat(desteklenen[1]);
+  var type = (desteklenen[2] || 'ms').toLowerCase();
+  switch (type) {
+    case 'years':
+    case 'year':
+    case 'yıl':
+    case 'yil':
+    case 'yrs':
+    case 'yr':
+    case 'y':
+      return n * y;
+    case 'months':
+    case 'month':
+    case 'mo':
+    case 'ay':
+      return n * mo;
+    case 'weeks':
+    case 'hafta':
+    case 'week':
+    case 'hf':
+    case 'w':
+      return n * w;
+    case 'days':
+    case 'day':
+    case 'gün':
+    case 'gun':
+    case 'gn':
+    case 'd':
+    case 'g':
+      return n * d;
+    case 'hours':
+    case 'hour':
+    case 'saat':
+    case 'hrs':
+    case 'hr':
+    case 'sa':
+    case 'h':
+      return n * h;
+    case 'minutes':
+    case 'minute':
+    case 'dakika':
+    case 'mins':
+    case 'min':
+    case 'dk':
+    case 'm':
+      return n * m;
+    case 'seconds':
+    case 'second':
+    case 'saniye':
+    case 'secs':
+    case 'sec':
+    case 'sn':
+    case 's':
+      return n * s;
+    case 'milliseconds':
+    case 'millisecond':
+    case 'milisaniye':
+    case 'msecs':
+    case 'msec':
+    case 'ms':
+      return n;
+    default:
+      return undefined;
+  }
 }
 
-var s = 1000;
-var m = s * 60;
-var h = m * 60;
-var d = h * 24;
-var w = d * 7;
-
 function long(ms, lang, showMS) {
-  var msAbs = Math.abs(ms);
-  var weeks = Math.floor(msAbs / w);
-  var days = Math.floor((msAbs % w) / d);
-  var hours = Math.floor((msAbs % d) / h);
-  var minutes = Math.floor((msAbs % h) / m);
-  var seconds = ((msAbs % m) / s).toFixed(0);
-  var milliseconds = msAbs % s;
+  let msAbs = Math.abs(ms);
+  let days = Math.floor(msAbs / d);
+  let hours = Math.floor((msAbs % (d)) / (h));
+  let minutes = Math.floor((msAbs % (h)) / (m));
+  let seconds = Math.floor(msAbs % (m) / (s));
+  let milliseconds = msAbs % (s);
 
-  var süre = "";
+  let süre = ""
 
-  if (weeks > 0) {
-    süre += sEkle(ms, msAbs, w, weeks + " hafta", weeks + " week", lang) + " ";
-  }
-
-  if (days > 0 || (weeks > 0 && (hours > 0 || minutes > 0 || seconds > 0))) {
+  if (days > 0) {
     süre += sEkle(ms, msAbs, d, days + " gün", days + " day", lang) + " ";
   }
 
-  if (hours > 0 || (days > 0 && (minutes > 0 || seconds > 0))) {
+  if (hours > 0) {
     süre += sEkle(ms, msAbs, h, hours + " saat", hours + " hour", lang) + " ";
   }
 
-  if (minutes > 0 || (hours > 0 && seconds > 0)) {
+  if (minutes > 0) {
     süre += sEkle(ms, msAbs, m, minutes + " dakika", minutes + " minute", lang) + " ";
   }
 
-  if (showMS) {
-    if (msAbs === 0) {
-      süre += sEkle(ms, msAbs, 1, milliseconds + " milisaniye", milliseconds + " millisecond", lang) + " ";
-    } else {
-      süre += sEkle(ms, msAbs, s, seconds + " saniye", seconds + " second", lang) + " ";
-      if (milliseconds > 0) {
-        süre += sEkle(ms, msAbs, 1, milliseconds + " milisaniye", milliseconds + " millisecond", lang) + " ";
-      }
-    }
-  } else if (seconds > 0 || (minutes === 0 && hours === 0 && days === 0 && weeks === 0 && ms > 0)) {
+  if (seconds > 0 && !showMS) {
     süre += sEkle(ms, msAbs, s, seconds + " saniye", seconds + " second", lang) + " ";
+  } else if (showMS && (msAbs > 0 || seconds > 0)) {
+    if (milliseconds > 0) {
+      süre += sEkle(ms, msAbs, 1, milliseconds + " milisaniye", milliseconds + " millisecond", lang) + " ";
+    }
   }
 
-  return süre.trim();
+  süre = süre.trim().replace(/(^|\s)0\s\w+/g, "").replace(/\s+/g, " ");
+
+  return süre;
 }
 
 function short(ms, lang, showMS) {
-  const translations = {
-    tr: {
-      w: 'hf',
-      d: 'g',
-      h: 'sa',
-      m: 'dk',
-      s: 'sn',
-      ms: 'ms',
-    },
-    en: {
-      w: 'w',
-      d: 'd',
-      h: 'h',
-      m: 'm',
-      s: 's',
-      ms: 'ms',
-    },
-  };
-
-  var msAbs = Math.abs(ms);
-  var weeks = Math.floor(msAbs / w);
-  var days = Math.floor((msAbs % w) / d);
-  var hours = Math.floor((msAbs % d) / h);
-  var minutes = Math.floor((msAbs % h) / m);
-  var seconds = ((msAbs % m) / s).toFixed(0);
-  var milliseconds = msAbs % s;
+  let msAbs = Math.abs(ms);
+  let days = Math.floor(msAbs / d);
+  let hours = Math.floor((msAbs % (d)) / (h));
+  let minutes = Math.floor((msAbs % (h)) / (m));
+  let seconds = Math.floor(msAbs % (m) / (s));
+  let milliseconds = msAbs % (s);
 
   let süre = "";
 
-  if (weeks > 0) {
-    süre += weeks + translations[lang].w + " ";
+  if (days > 0) {
+    süre += sEkleme(ms, msAbs, d, days + "g", days + "d", lang) + " ";
   }
 
-  if (days > 0 || (weeks > 0 && (hours > 0 || minutes > 0 || seconds > 0))) {
-    süre += days + translations[lang].d + " ";
+  if (hours > 0) {
+    süre += sEkleme(ms, msAbs, h, hours + "sa", hours + "h", lang) + " ";
   }
 
-  if (hours > 0 || (days > 0 && (minutes > 0 || seconds > 0))) {
-    süre += hours + translations[lang].h + " ";
+  if (minutes > 0) {
+    süre += sEkleme(ms, msAbs, m, minutes + "dk", minutes + "m", lang) + " ";
   }
 
-  if (minutes > 0 || (hours > 0 && seconds > 0)) {
-    süre += minutes + translations[lang].m + " ";
-  }
-
-  if (showMS) {
-    if (msAbs === 0) {
-      süre += milliseconds + translations[lang].m + " ";
-    } else {
-      süre += seconds + translations[lang].s + " ";
-      if (milliseconds > 0) {
-        süre += milliseconds + translations[lang].ms + " ";
-      }
+  if (seconds > 0 && !showMS) {
+    süre += sEkleme(ms, msAbs, s, seconds + "sn", seconds + "s", lang) + " ";
+  } else if (showMS && (msAbs > 0 || seconds > 0)) {
+    if (milliseconds > 0) {
+      süre += sEkleme(ms, msAbs, 1, milliseconds + "ms", milliseconds + "ms", lang) + " ";
     }
-  } else if (seconds > 0 || (minutes === 0 && hours === 0 && days === 0 && weeks === 0 && ms > 0)) {
-    süre += seconds + translations[lang].s;
   }
 
   return süre.trim();
@@ -194,10 +244,15 @@ function sEkle(ms, msAbs, n, nameTr, nameEn, lang) {
   if (lang === 'tr') {
     return nameTr;
   } else if (lang === 'en') {
-    if (Math.round(ms / n) === 1) {
-      return nameEn;
-    } else {
-      return nameEn + 's';
-    }
+    var isPlural = msAbs >= n * 1.5;
+    return nameEn + (isPlural ? 's' : '');
+  }
+}
+
+function sEkleme(ms, msAbs, n, nameTr, nameEn, lang) {
+  if (lang === 'tr') {
+    return nameTr;
+  } else if (lang === 'en') {
+    return nameEn;
   }
 }
