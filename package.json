@@ -26,10 +26,12 @@
     "tr-ms",
     "ms-short",
     "ms-short",
+    "ms-long",
     "ms-tr",
     "ms-en",
     "timestamp",
-    "dc-timestamp"
+    "dc-timestamp",
+    "time-ms"
   ],
   "license": "MIT",
   "main": "./file/index.js",
@@ -39,5 +41,5 @@
     "type": "git",
     "url": "git+https://github.com/MZRCode/mzrdjs.git"
   },
-  "version": "0.0.14"
+  "version": "0.0.15"
 }
