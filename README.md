@@ -10,12 +10,8 @@
  </p>
 </div>
 
-# What's new in 0.0.15?
-- Added converting string time to milliseconds! 
-- Fixed bugs in types!
-- Fixed bugs in short ms!
-- Fixed bugs in long ms!
-- Re-named addNumberDot function to formatNumber!
+# What's new in 0.0.16?
+- Added 'largest' feature MS system!
 
 # Features
 
@@ -29,7 +25,7 @@ mzr.shortNumber(112394) // Represents 112394 as 112.3k; 112000 it would be repre
 mzr.mcmotd('serverIp') // Generates illustrated and colored MOTD for Minceraft servers.
 mzr.timestamp(1695495014935) // Changed the normal timestamp to the timestamp for Discord.
 mzr.formatNumber(12381248125) // The numbers will be more readable because it adds a dot.
-mzr.ms(60000, { short: true, lang: 'en', ms: true }) // {} is not mandatory. Supports Turkish (TR) and English (EN) languages.
+mzr.ms(60000, { short: true, lang: 'en', ms: true, largest: 2 }) // {} is not mandatory. Supports Turkish (TR) and English (EN) languages.
 mzr.ms('1m') // Converts the time unit you specify to milliseconds.
 ```
 If you have any questions, you can join my [Discord server](https://discord.gg/ktVdQYrtXF).
@@ -46,7 +42,7 @@ mzr.shortNumber(112394) // 112394'ü 112.3k şeklinde yansıtılır. 112000 olsa
 mzr.mcmotd('serverIp') // Minecraft sunucuları için resimli ve renkli MOTD oluşturur.
 mzr.timestamp(1695495014935) // Normal timestamp'i Discord için olan timestamp'e çevirir.
 mzr.formatNumber(12381248125) // Sayılara düzgün bir şekilde olacak şekilde nokta ekler.
-mzr.ms(60000, { short: true, lang: 'tr', ms: true }) // {} içinde olanlar zorunlu değildir. Türkçe (TR) ve İngilizce (EN) dillerini destekler.
+mzr.ms(60000, { short: true, lang: 'tr', ms: true, largest: 2 }) // {} içinde olanlar zorunlu değildir. Türkçe (TR) ve İngilizce (EN) dillerini destekler.
 mzr.ms('1dk') // Belirlediğiniz zaman birimini milisaniyeye çevirir.
 ```
 Herhangi bir sorunuz varsa, [Discord sunucuma](https://discord.gg/ktVdQYrtXF) katılabilirsiniz.
@@ -57,7 +53,7 @@ const mzr = require('mzrdjs');
 ```
 ## Version
 ```js
-console.log(mzr.version); // 0.0.14
+console.log(mzr.version); // 0.0.16
 ```
 ## Calculate
 ```js
@@ -80,14 +76,15 @@ mzr.mcmotd('play.hypixel.net'); // Hypixel Motd
 ```js
 mzr.timestamp(1695495014935); // 1695495014, <t:1695495014:R> = x xxx ago
 ```
-## Add Number Dot
+## Format Number
 ```js
 mzr.formatNumber(12381248125); // 12.381.248.125
 ```
 ## MS
 ```js
-// Valid times: [ms, s, m, h, d, w, y]
-// Geçerli Zamanlar: [ms, sn, dk, sa, g, hf, y] (sa = saat, g = gün, hf = hafta, y = yıl)
+// Valid times: [ms, s, m, h, d, w, mo, y]
+// Geçerli Zamanlar: [ms, sn, dk, sa, g, hf, ay, y]
+const time = 2682061000; // 31d 1h 1m 1s
 
 mzr.ms('1.5m') // 90000
 mzr.ms('1.5dk') // 90000
@@ -97,4 +94,6 @@ mzr.ms(90300, { lang: 'tr' }) // 1 dakika 30 saniye
 mzr.ms(90300, { ms: true }) // 1 minutes 30 seconds 300 milliseconds
 mzr.ms(90300, { short: true, lang: 'tr', ms: true }) // 1dk 30sn 300ms
 mzr.ms(90300, { short: true, lang: 'en', ms: true }) // 1m 30s 300ms
+mzr.ms(time, { short: true, lang: 'en', largest: 2 }) // 31d 1h
+mzr.ms(time, { short: true, lang: 'tr', largest: 3 }) // 31g 1sa 1dk
 ```
