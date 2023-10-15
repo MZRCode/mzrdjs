@@ -1,7 +1,8 @@
 interface Options {
     lang: "tr" | "en";
     short?: boolean;
-    ms?: boolean;
+    largest?: number;
+    units?: string[];
 }
 
 declare const mzrdjs: {
@@ -9,10 +10,11 @@ declare const mzrdjs: {
     random: (min: number, max: number) => number;
     shortNumber: (input: number) => string;
     mcmotd: (ip: string) => string;
-    addNumberDot: (input: number) => string;
+    formatNumber: (input: number) => string;
     timestamp: (time: number) => number;
     ms: (value: string | number, options: Options) => string | number;
     version: string;
+    tdk: (kelime: string) => string;
 }
   
 export = mzrdjs;
