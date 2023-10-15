@@ -5,7 +5,6 @@
   "bugs": {
     "url": "https://github.com/MZRCode/mzrdjs/issues"
   },
-  "bundleDependencies": false,
   "deprecated": false,
   "description": "A very comprehensive module that does a lot of things",
   "homepage": "https://github.com/MZRCode/mzrdjs#readme",
@@ -31,7 +30,15 @@
     "ms-en",
     "timestamp",
     "dc-timestamp",
-    "time-ms"
+    "time-ms",
+    "mzrms",
+    "kelime-oyunu",
+    "kelimeoyunu",
+    "kelime-oyunu-tr",
+    "tdk",
+    "sozluk",
+    "trsozluk",
+    "türkdilkurumu"
   ],
   "license": "MIT",
   "main": "./file/index.js",
@@ -41,5 +48,5 @@
     "type": "git",
     "url": "git+https://github.com/MZRCode/mzrdjs.git"
   },
-  "version": "0.0.15"
+  "version": "0.0.20"
 }
