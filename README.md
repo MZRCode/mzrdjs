@@ -10,8 +10,9 @@
  </p>
 </div>
 
-# What's new in 0.0.16?
-- Added 'largest' feature MS system!
+# What's new in 0.0.20?
+- Added Word Game system exclusively for Turkish language!
+- If you are using the old version it will now give a warning to console!
 
 # Features
 
@@ -25,8 +26,9 @@ mzr.shortNumber(112394) // Represents 112394 as 112.3k; 112000 it would be repre
 mzr.mcmotd('serverIp') // Generates illustrated and colored MOTD for Minceraft servers.
 mzr.timestamp(1695495014935) // Changed the normal timestamp to the timestamp for Discord.
 mzr.formatNumber(12381248125) // The numbers will be more readable because it adds a dot.
-mzr.ms(60000, { short: true, lang: 'en', ms: true, largest: 2 }) // {} is not mandatory. Supports Turkish (TR) and English (EN) languages.
+mzr.ms(60000, { short: true, lang: 'en', largest: 2, units: ['ms', 's', 'm'] }) // {} is not mandatory. Supports Turkish (TR) and English (EN) languages.
 mzr.ms('1m') // Converts the time unit you specify to milliseconds.
+mzr.tdk('inek') // Ideal for a word game system and its usage is at the bottom. (Special for Turks)
 ```
 If you have any questions, you can join my [Discord server](https://discord.gg/ktVdQYrtXF).
 
@@ -42,8 +44,9 @@ mzr.shortNumber(112394) // 112394'ü 112.3k şeklinde yansıtılır. 112000 olsa
 mzr.mcmotd('serverIp') // Minecraft sunucuları için resimli ve renkli MOTD oluşturur.
 mzr.timestamp(1695495014935) // Normal timestamp'i Discord için olan timestamp'e çevirir.
 mzr.formatNumber(12381248125) // Sayılara düzgün bir şekilde olacak şekilde nokta ekler.
-mzr.ms(60000, { short: true, lang: 'tr', ms: true, largest: 2 }) // {} içinde olanlar zorunlu değildir. Türkçe (TR) ve İngilizce (EN) dillerini destekler.
+mzr.ms(60000, { short: true, lang: 'tr', largest: 2, units: ['ms', 'sn', 'dk'] }) // {} içinde olanlar zorunlu değildir. Türkçe (TR) ve İngilizce (EN) dillerini destekler.
 mzr.ms('1dk') // Belirlediğiniz zaman birimini milisaniyeye çevirir.
+mzr.tdk('inek') // Kelime oyunu sistemi için ideal ve kullanımı en aşağıda var.
 ```
 Herhangi bir sorunuz varsa, [Discord sunucuma](https://discord.gg/ktVdQYrtXF) katılabilirsiniz.
 
@@ -53,7 +56,7 @@ const mzr = require('mzrdjs');
 ```
 ## Version
 ```js
-console.log(mzr.version); // 0.0.16
+console.log(mzr.version); // 0.0.20
 ```
 ## Calculate
 ```js
@@ -82,8 +85,8 @@ mzr.formatNumber(12381248125); // 12.381.248.125
 ```
 ## MS
 ```js
-// Valid times: [ms, s, m, h, d, w, mo, y]
-// Geçerli Zamanlar: [ms, sn, dk, sa, g, hf, ay, y]
+// EN Time: [ms, s, m, h, d, w, mo, y]
+// TR Zaman: [ms, sn, dk, sa, g, hf, ay, y]
 const time = 2682061000; // 31d 1h 1m 1s
 
 mzr.ms('1.5m') // 90000
@@ -91,9 +94,25 @@ mzr.ms('1.5dk') // 90000
 mzr.ms(90300) // 1 minutes 30 seconds
 mzr.ms(90300, { short: true }) // 1m 30s
 mzr.ms(90300, { lang: 'tr' }) // 1 dakika 30 saniye
-mzr.ms(90300, { ms: true }) // 1 minutes 30 seconds 300 milliseconds
-mzr.ms(90300, { short: true, lang: 'tr', ms: true }) // 1dk 30sn 300ms
-mzr.ms(90300, { short: true, lang: 'en', ms: true }) // 1m 30s 300ms
+mzr.ms(90300, { units: ['ms', 's', 'm'] }) // 1 minutes 30 seconds 300 milliseconds
+mzr.ms(90300, { short: true, lang: 'tr', units: ['ms', 'sn', 'dk'] }) // 1dk 30sn 300ms
+mzr.ms(90300, { short: true, lang: 'en', units: ['ms', 's', 'm'] }) // 1m 30s 300ms
 mzr.ms(time, { short: true, lang: 'en', largest: 2 }) // 31d 1h
 mzr.ms(time, { short: true, lang: 'tr', largest: 3 }) // 31g 1sa 1dk
+```
+## Kelime Oyunu (TDK)
+```js
+mzr.tdk('kelime').then((veri) => {
+   console.log(veri.onay) // true
+   console.log(veri.not) // null
+   console.log(veri.kelime) // kelime
+   console.log(veri.ilkHarf) // k
+   console.log(veri.sonHarf) // e
+   console.log(veri.lisan) // Arapça kelime
+   console.log(veri.anlam) // Bir veya birkaç heceden oluşan, anlamlı ses birliği; söz, sözcük, lügat
+})
+
+mzr.tdk('kelime').then((veri) => {
+   console.log(veri) // { onay: true, not: null, kelime: 'kelime', ilkHarf: 'k', sonHarf: 'e', lisan: 'Arapça kelime', anlam: 'Bir veya birkaç heceden oluşan, anlamlı ses birliği; söz, sözcük, lügat' }
+})
 ```
