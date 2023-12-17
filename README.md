@@ -59,7 +59,7 @@ mzr.ms(60000, { short: true, lang: 'tr', largest: 2, units: ['ms', 'sn', 'dk'] }
 mzr.ms('1dk') // Belirlediğiniz zaman birimini milisaniyeye çevirir.
 mzr.tdk('inek') // Kelime oyunu sistemi için ideal ve kullanımı en aşağıda var.
 mzr.leaderboard('users', 10, { dot: true }) // users verisinin içindikileri arar ve 2. kısımdaki sayı, maksimum listelencek limitdir. "_" kullanarak yapıyor iseniz "dot: false" yapınız.
-const { AntiCrash } = require('mzrdjs') // Herhangi bir hatanın botunuzu kapatmasını önleyen sistemi başlatır.
+new AntiCrash().start() // Herhangi bir hatanın botunuzu kapatmasını önleyen sistemi başlatır.
 ```
 Herhangi bir sorunuz varsa, [Discord sunucuma](https://discord.gg/ktVdQYrtXF) katılabilirsiniz.
 
