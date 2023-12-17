@@ -13,13 +13,13 @@
 # What's new in 0.0.26?
 - Added Anti Crash system!
 
-## What's new in 0.0.25?
+### What's new in 0.0.25?
 - API bug in leaderboard function has been fixed!
 
-## What's new in 0.0.24?
+### What's new in 0.0.24?
 - Leadarboard system (Currently only supports croxydb database)
 
-# What's planned for the future?
+## What's planned for the future?
 - Mongodb support will be added to the Leaderbord function
 
 # Features
