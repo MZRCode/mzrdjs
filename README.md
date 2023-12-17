@@ -10,14 +10,22 @@
  </p>
 </div>
 
-# What's new in 0.0.20?
-- Added Word Game system exclusively for Turkish language!
-- If you are using the old version it will now give a warning to console!
+# What's new in 0.0.26?
+- Added Anti Crash system!
+
+## What's new in 0.0.25?
+- API bug in leaderboard function has been fixed!
+
+## What's new in 0.0.24?
+- Leadarboard system (Currently only supports croxydb database)
+
+# What's planned for the future?
+- Mongodb support will be added to the Leaderbord function
 
 # Features
-
 ```js
-const mzr = require("mzrdjs")
+const mzr = require('mzrdjs');
+const { AntiCrash } = require('mzrdjs');
 
 mzr.version // reflects the version of mzrdjs.
 mzr.calculate(20, 200) // It takes the percentage of the number A to the number B.
@@ -29,13 +37,16 @@ mzr.formatNumber(12381248125) // The numbers will be more readable because it ad
 mzr.ms(60000, { short: true, lang: 'en', largest: 2, units: ['ms', 's', 'm'] }) // {} is not mandatory. Supports Turkish (TR) and English (EN) languages.
 mzr.ms('1m') // Converts the time unit you specify to milliseconds.
 mzr.tdk('inek') // Ideal for a word game system and its usage is at the bottom. (Special for Turks)
+mzr.leaderboard('users', 10, { dot: true }) // It searches the users data and the number in the 2nd part is the maximum limit to be listed. If you are using "_", make it "dot: false"
+new AntiCrash().start() // Initializes the system that prevents any error from shutting down your bot.
 ```
 If you have any questions, you can join my [Discord server](https://discord.gg/ktVdQYrtXF).
 
 # Özellikler
 
 ```js
-const mzr = require("mzrdjs")
+const mzr = require('mzrdjs');
+const { AntiCrash } = require('mzrdjs');
 
 mzr.version // mzrdjs sürümünü yansıtır.
 mzr.calculate(20, 100) // A sayısının B sayısına yüzdesini alır.
@@ -47,6 +58,8 @@ mzr.formatNumber(12381248125) // Sayılara düzgün bir şekilde olacak şekilde
 mzr.ms(60000, { short: true, lang: 'tr', largest: 2, units: ['ms', 'sn', 'dk'] }) // {} içinde olanlar zorunlu değildir. Türkçe (TR) ve İngilizce (EN) dillerini destekler.
 mzr.ms('1dk') // Belirlediğiniz zaman birimini milisaniyeye çevirir.
 mzr.tdk('inek') // Kelime oyunu sistemi için ideal ve kullanımı en aşağıda var.
+mzr.leaderboard('users', 10, { dot: true }) // users verisinin içindikileri arar ve 2. kısımdaki sayı, maksimum listelencek limitdir. "_" kullanarak yapıyor iseniz "dot: false" yapınız.
+const { AntiCrash } = require('mzrdjs') // Herhangi bir hatanın botunuzu kapatmasını önleyen sistemi başlatır.
 ```
 Herhangi bir sorunuz varsa, [Discord sunucuma](https://discord.gg/ktVdQYrtXF) katılabilirsiniz.
 
@@ -56,7 +69,7 @@ const mzr = require('mzrdjs');
 ```
 ## Version
 ```js
-console.log(mzr.version); // 0.0.20
+console.log(mzr.version); // 0.0.25
 ```
 ## Calculate
 ```js
@@ -115,4 +128,34 @@ mzr.tdk('kelime').then((veri) => {
 mzr.tdk('kelime').then((veri) => {
    console.log(veri) // { onay: true, not: null, kelime: 'kelime', ilkHarf: 'k', sonHarf: 'e', lisan: 'Arapça kelime', anlam: 'Bir veya birkaç heceden oluşan, anlamlı ses birliği; söz, sözcük, lügat' }
 })
+```
+## Ledarboard (Only Croxydb)
+```js
+/* My Database; (I saved it as `users.${userId}`)
+   {"users":{"701518625760346172":100,"688100345775521903":85}}
+*/
+mzr.ledaerboard('users', 10, { dot: true }) // If the number was 1, only mzrdev would appear
+/* OutPut;
+1.      100     mzrdev
+2.      85     supraaa
+*/
+
+/* My Database; (I saved it as `users_${userId}`)
+   {"users_701518625760346172":100,"users_688100345775521903":85}
+*/
+mzr.ledaerboard('users', 2) // or do not write this; { dot: false }
+/* OutPut;
+1.      100     mzrdev
+2.      85     supraaa
+*/
+```
+## Anti Crash
+```js
+// If you do any of the following, your bot will never shut down due to an error.
+// Anti Crash system Writes briefly when it reflects an error on the console, but writes in detail when it reflects it on the webhook
+new AntiCrash().start() // Initializes the system that prevents any error from shutting down your bot.
+new AntiCrash().start() // If an error is received, it reflects the error on the console.
+new AntiCrash({ url: 'DISCORD_WEBHOOK_URL' }).setShow().start() // It reflects the error to the console and to the Webhook you wrote.
+new AntiCrash().setHide('console').setShow('webhook').start() // It only reflects the error to the Webhook you are writing to.
+new AntiCrash().setHide().start() // Reflects nothing to anywhere, acts as if it has never received any errors.
 ```
