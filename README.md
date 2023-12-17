@@ -69,7 +69,7 @@ const mzr = require('mzrdjs');
 ```
 ## Version
 ```js
-console.log(mzr.version); // 0.0.25
+console.log(mzr.version); // 0.0.26
 ```
 ## Calculate
 ```js
