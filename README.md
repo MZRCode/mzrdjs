@@ -160,6 +160,6 @@ mzr.ledaerboard('users', 2) // or do not write this; { dot: false }
 new AntiCrash().start() // Initializes the system that prevents any error from shutting down your bot.
 new AntiCrash().start() // If an error is received, it reflects the error on the console.
 new AntiCrash({ url: 'DISCORD_WEBHOOK_URL' }).setShow().start() // It reflects the error to the console and to the Webhook you wrote.
-new AntiCrash().setHide('console').setShow('webhook').start() // It only reflects the error to the Webhook you are writing to.
+new AntiCrash({ url: 'DISCORD_WEBHOOK_URL' }).setHide('console').setShow('webhook').start() // It only reflects the error to the Webhook you are writing to.
 new AntiCrash().setHide().start() // Reflects nothing to anywhere, acts as if it has never received any errors.
 ```
