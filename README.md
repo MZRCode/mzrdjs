@@ -10,8 +10,12 @@
  </p>
 </div>
 
-# What's new in 0.0.26?
+# What's new in 0.0.27?
+- A major bug fixed!
+
+## What's new in 0.0.26?
 - Added Anti Crash system!
+- Removed the obligation to download the latest version! (Removed in functions, still available in classes)
 
 ### What's new in 0.0.25?
 - API bug in leaderboard function has been fixed!
@@ -19,7 +23,7 @@
 ### What's new in 0.0.24?
 - Leadarboard system (Currently only supports croxydb database)
 
-## What's planned for the future?
+# What's planned for the future?
 - Mongodb support will be added to the Leaderbord function
 
 # Features
@@ -69,7 +73,7 @@ const mzr = require('mzrdjs');
 ```
 ## Version
 ```js
-console.log(mzr.version); // 0.0.26
+console.log(mzr.version); // 0.0.27
 ```
 ## Calculate
 ```js
