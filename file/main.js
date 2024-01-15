@@ -16,31 +16,6 @@ module.exports = {
       maximumFractionDigits: 2,
     }).format(number);
   },
-  /*if (number >= 1e36) {
-    return parseFloat((number / 1e33).toFixed(0)) + 'Dc';
-  } else if (number >= 1e30) {
-    return parseFloat((number / 1e30).toFixed(0)) + 'N';
-  } else if (number >= 1e27) {
-    return parseFloat((number / 1e27).toFixed(0)) + 'Oc';
-  } else if (number >= 1e24) {
-    return parseFloat((number / 1e24).toFixed(0)) + 'Sp';
-  } else if (number >= 1e21) {
-    return parseFloat((number / 1e21).toFixed(0)) + 'Sx';
-  } else if (number >= 1e18) {
-    return parseFloat((number / 1e18).toFixed(0)) + 'Qn';
-  } else if (number >= 1e15) {
-    return parseFloat((number / 1e15).toFixed(0)) + 'Q';
-  } else if (number >= 1e12) {
-    return parseFloat((number / 1e12).toFixed(0)) + 'T';
-  } else if (number >= 1e9) {
-    return parseFloat((number / 1e9).toFixed(0)) + 'B';
-  } else if (number >= 1e6) {
-    return parseFloat((number / 1e6).toFixed(1)) + 'M';
-  } else if (number >= 10000 && number <= 999999) {
-    return parseFloat((number / 1000).toFixed(1)) + 'k';
-  }
-  return number.toString();
-},*/
 
   mcmotd: function (ip) {
     if (ip.length < 10) {
@@ -57,11 +32,6 @@ module.exports = {
     } else {
       return formattedNumber;
     };
-  },
-
-  get slashBuilder() { // Only my youtube channel code you not use :)
-    const ansi = require('ansi-colors');
-    return console.log(`▀████▄     ▄███▀  ██▀▀▀████  ██▀▀▀██▄   ╋ ${ansi.bold('Proje:')} YouTube için Altyapı\n  ████    ████   █▀   ███    ██   ▀██▄  ╋ ${ansi.bold('Sahip:')} MZR\n  █ ██   ▄█ ██   ▀   ███     ██   ▄██   ╋ ${ansi.bold('Kanal:')} MZR Development\n  █  ██  █▀ ██      ███      ███████    ╋ Copyright (c) 2023. All rights reserved.\n  █  ██▄█▀  ██     ███   ▄   ██  ██▄    ╋ Bu kod ${ansi.bold('mzrdev')}'in mülkiyetindedir ve çoğaltılamaz veya\n  █  ▀██▀   ██    ███   ▄█   ██   ▀██▄  ╋ İzinsiz değiştirilemez. Daha fazla bilgi için bizimle iletişime geçin\n▄███▄ ▀▀  ▄████  ▄█████████  ███▄ ▄███▄ ╋ ${ansi.bold('https://discord.gg/ktVdQYrtXF')}`)
   },
 
   get version() {
