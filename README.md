@@ -10,18 +10,13 @@
  </p>
 </div>
 
-# What's new in 0.0.27?
+## What's new in 0.0.28?
+- Password generator added!
+- Code generator added!
+- Bugs in ms function fixed!
+
+### What's new in 0.0.27?
 - A major bug fixed!
-
-## What's new in 0.0.26?
-- Added Anti Crash system!
-- Removed the obligation to download the latest version! (Removed in functions, still available in classes)
-
-### What's new in 0.0.25?
-- API bug in leaderboard function has been fixed!
-
-### What's new in 0.0.24?
-- Leadarboard system (Currently only supports croxydb database)
 
 # What's planned for the future?
 - Mongodb support will be added to the Leaderbord function
@@ -43,6 +38,8 @@ mzr.ms('1m') // Converts the time unit you specify to milliseconds.
 mzr.tdk('inek') // Ideal for a word game system and its usage is at the bottom. (Special for Turks)
 mzr.leaderboard('users', 10, { dot: true }) // It searches the users data and the number in the 2nd part is the maximum limit to be listed. If you are using "_", make it "dot: false"
 new AntiCrash().start() // Initializes the system that prevents any error from shutting down your bot.
+mzr.generatePassword({ length: 16, numbers: true }) // You can create a custom password generate with many settings.
+mzr.generateCode({ length: 16, range: 4 }) // You can create a custom code generate with many settings.
 ```
 If you have any questions, you can join my [Discord server](https://discord.gg/ktVdQYrtXF).
 
@@ -64,6 +61,8 @@ mzr.ms('1dk') // Belirlediğiniz zaman birimini milisaniyeye çevirir.
 mzr.tdk('inek') // Kelime oyunu sistemi için ideal ve kullanımı en aşağıda var.
 mzr.leaderboard('users', 10, { dot: true }) // users verisinin içindikileri arar ve 2. kısımdaki sayı, maksimum listelencek limitdir. "_" kullanarak yapıyor iseniz "dot: false" yapınız.
 new AntiCrash().start() // Herhangi bir hatanın botunuzu kapatmasını önleyen sistemi başlatır.
+mzr.generatePassword({ length: 16, numbers: true }) // Bir çok ayar ile özel şifre oluşturabilirsiniz.
+mzr.generateCode({ length: 16, range: 4 }) // Bir çok ayar ile özel kod oluşturabilirsiniz.
 ```
 Herhangi bir sorunuz varsa, [Discord sunucuma](https://discord.gg/ktVdQYrtXF) katılabilirsiniz.
 
@@ -162,4 +161,48 @@ new AntiCrash().start() // If an error is received, it reflects the error on the
 new AntiCrash({ url: 'DISCORD_WEBHOOK_URL' }).setShow().start() // It reflects the error to the console and to the Webhook you wrote.
 new AntiCrash({ url: 'DISCORD_WEBHOOK_URL' }).setHide('console').setShow('webhook').start() // It only reflects the error to the Webhook you are writing to.
 new AntiCrash().setHide().start() // Reflects nothing to anywhere, acts as if it has never received any errors.
+```
+## Generate Password
+| Name                     | Description                                                           | Default Value |
+|--------------------------|-----------------------------------------------------------------------|---------------|
+| length                   | Integer, length of password                                           | 15            |
+| numbers                  | Boolean, add numbers in password                                      | false         |
+| symbols                  | Boolean or String, add symbols in password                            | false         |
+| lowercase                | Boolean, add lowercase in password                                    | true          |
+| uppercase                | Boolean, use uppercase letters in password                            | true          |
+| excludeSimilarCharacters | Boolean, exclude similar chars, like 'i' and 'l'                      | false         |
+| allLowercase             | Boolean, Write the password in lowercase                              | false         |
+| allUppercase             | Boolean, Write the password in uppercase                              | false         |
+```js
+mzr.generatePassword({ length: 16 }) // uHApSAqxZnVTQwJS
+mzr.generatePassword({ length: 16, numbers: true }) // aHE77FEx1DWG6Phq
+mzr.generatePassword({ length: 16, lowercase: true }) // rCLIvmkVhjMOuLyb
+mzr.generatePassword({ length: 16, uppercase: true }) // ZpWrtSScyrKenMTL
+mzr.generatePassword({ length: 16, symbols: true }) // cH]Uht=ypIK^@oKW
+mzr.generatePassword({ length: 16, excludeSimilarCharacters: true }) // MZHMveJCXBmRsTtf
+mzr.generatePassword({ length: 16, allLowercase: true }) // aswsoykueheutmxc
+mzr.generatePassword({ length: 16, allUppercase: true }) // AXGWPFGQHUJKDQKS
+```
+## Generate Code
+| Name                     | Description                                                           | Default Value |
+|--------------------------|-----------------------------------------------------------------------|---------------|
+| length                   | Integer, length of code                                               | 16            |
+| range                    | Integer, Adjusts the interval distance                                | 4             |
+| numbers                  | Boolean, add numbers in code                                          | false         |
+| lowercase                | Boolean, add lowercase in code                                        | false         |
+| uppercase                | Boolean, use uppercase letters in code                                | false         |
+| excludeSimilarCharacters | Boolean, exclude similar chars, like 'i' and 'l'                      | false         |
+| symbol                   | String, You change the separation symbol                              | '-'           |
+| allLowercase             | Boolean, Write the code in lowercase                                  | false         |
+| allUppercase             | Boolean, Write the code in uppercase                                  | true          |
+```js
+mzr.generateCode({ length: 16 }) // UHAP-SAQX-ZNVT-QWJS
+mzr.generateCode({ length: 16, range: 2 }) // UH-AP-SA-QX-ZN-VT-QW-JS
+mzr.generateCode({ length: 16, numbers: true }) // AHE7-7FEX-1DWG-6PHQ
+mzr.generateCode({ length: 16, lowercase: true }) // RCLI-VMKV-HJMO-ULYB
+mzr.generateCode({ length: 16, uppercase: true }) // ZPWR-TSSC-YRKE-NMTL
+mzr.generateCode({ length: 16, excludeSimilarCharacters: true }) // MZHM-VEJC-XBMR-STTF
+mzr.generateCode({ length: 16, symbol: '/' }) // AGAW/QSZV/RIYJ/ZOQX
+mzr.generateCode({ length: 16, allLowercase: true }) // asws-oyku-eheu-tmxc
+mzr.generateCode({ length: 16, allUppercase: true }) // AXGW-PFGQ-HUJK-DQKS
 ```
