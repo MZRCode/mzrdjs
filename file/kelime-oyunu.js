@@ -1,3 +1,5 @@
+const axios = require('axios');
+
 module.exports = {
     tdk: async function (kelime) {
         const mesaj = kelime.toLocaleLowerCase();
@@ -7,8 +9,8 @@ module.exports = {
         const query = encodeURI(mesaj);
 
         try {
-            const response = await fetch(`https://sozluk.gov.tr/gts?ara=${query}`);
-            const veri = await response.json();
+            const response = await axios.get(`https://sozluk.gov.tr/gts?ara=${query}`);
+            const veri = response.data;
 
             if (mesaj.length > 70) {
                 return {
