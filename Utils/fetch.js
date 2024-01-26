@@ -1,7 +1,7 @@
-const axios = require('axios');
-
 module.exports = {
     fetchUser: async function (userId) {
+        const axios = require('axios');
+
         try {
             const response = await axios.get(`https://api.unitybot.net/v1/users/${userId}`);
             const data = response.data;
