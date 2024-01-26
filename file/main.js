@@ -34,10 +34,6 @@ module.exports = {
     };
   },
 
-  get slashBuilder() { // Only my youtube channel code you not use :)
-    return console.log(`▀████▄     ▄███▀  ██▀▀▀████  ██▀▀▀██▄   ╋ Proje: YouTube için Altyapı\n  ████    ████   █▀   ███    ██   ▀██▄  ╋ Sahip: MZR\n  █ ██   ▄█ ██   ▀   ███     ██   ▄██   ╋ Kanal: MZR Development\n  █  ██  █▀ ██      ███      ███████    ╋ Copyright (c) 2023-2024. All rights reserved.\n  █  ██▄█▀  ██     ███   ▄   ██  ██▄    ╋ Bu kod mzrdev'in mülkiyetindedir ve çoğaltılamaz veya\n  █  ▀██▀   ██    ███   ▄█   ██   ▀██▄  ╋ İzinsiz değiştirilemez. Daha fazla bilgi için bizimle iletişime geçin\n▄███▄ ▀▀  ▄████  ▄█████████  ███▄ ▄███▄ ╋ https://discord.gg/ktVdQYrtXF`)
-  },
-
   get version() {
     try {
       const version = require('mzrdjs/package.json').version;
