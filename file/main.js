@@ -1,7 +1,7 @@
 module.exports = {
   calculate: function (value, value2) {
     if (value2 === 0) {
-      throw new TypeError("Second value cannot be \"0\" for percentage calculation.");
+      throw new TypeError('Second value cannot be "0" for percentage calculation.');
     }
     return (value / value2) * 100;
   },
@@ -32,6 +32,10 @@ module.exports = {
     } else {
       return formattedNumber;
     };
+  },
+
+  get slashBuilder() { // Only my youtube channel code you not use :)
+    return console.log(`▀████▄     ▄███▀  ██▀▀▀████  ██▀▀▀██▄   ╋ Proje: YouTube için Altyapı\n  ████    ████   █▀   ███    ██   ▀██▄  ╋ Sahip: MZR\n  █ ██   ▄█ ██   ▀   ███     ██   ▄██   ╋ Kanal: MZR Development\n  █  ██  █▀ ██      ███      ███████    ╋ Copyright (c) 2023-2024. All rights reserved.\n  █  ██▄█▀  ██     ███   ▄   ██  ██▄    ╋ Bu kod mzrdev'in mülkiyetindedir ve çoğaltılamaz veya\n  █  ▀██▀   ██    ███   ▄█   ██   ▀██▄  ╋ İzinsiz değiştirilemez. Daha fazla bilgi için bizimle iletişime geçin\n▄███▄ ▀▀  ▄████  ▄█████████  ███▄ ▄███▄ ╋ https://discord.gg/ktVdQYrtXF`)
   },
 
   get version() {
@@ -74,30 +78,33 @@ module.exports = {
     throw new Error('value is not a non-empty string or a valid number! value = ' + JSON.stringify(value));
   },
 
-  leaderboard: async function (data, pageSize, options) { // numPages
-    // try {
-    //   require('../../croxydb/package.json').version;
-    // } catch (error) {
-    //   if (error.code == 'MODULE_NOT_FOUND') {
-    //     throw new Error("Croxydb module is not installed! You can type 'npm i croxydb' to install it.")
-    //   } else {
-    //     throw new Error('An error occurred! Here is the error that occurred: ' + error.message);
-    //   };
-    // };
+  leaderboard: async function (data, size, options) {
+    try {
+      require('croxydb/package.json').version;
+    } catch (error) {
+      if (error.code == 'MODULE_NOT_FOUND') {
+        throw new Error("Croxydb module is not installed! You can type 'npm i croxydb' to install it.")
+      } else {
+        throw new Error('An error occurred! Here is the error that occurred: ' + error.message);
+      };
+    };
 
     const db = require('croxydb');
     const get = require('mzrdjs/Utils/fetch');
+    let newSize = size;
 
-    if (isNaN(pageSize)) {
-      throw new Error('You must enter a number in the "Page Size" field! If you don\'t know what to do you can go to https://npmjs.com/package/mzrdjs')
+    if (!size) newSize = 3;
+
+    if (isNaN(newSize)) {
+      throw new Error('You must enter a number in the "Size" field! If you don\'t know what to do you can go to https://npmjs.com/package/mzrdjs');
     };
 
-    if (pageSize >= 100) {
-      throw new Error('You can list up to max 100! If you don\'t know what to do you can go to https://npmjs.com/package/mzrdjs')
+    if (newSize >= 20) {
+      throw new Error('You can list up to max 20! If you don\'t know what to do you can go to https://npmjs.com/package/mzrdjs');
     };
 
     if (!data) {
-      throw new Error('enter a data! If you don\'t know what to do you can go to https://npmjs.com/package/mzrdjs')
+      throw new Error('enter a data! If you don\'t know what to do you can go to https://npmjs.com/package/mzrdjs');
     };
 
     const dot = options?.dot || false;
@@ -116,7 +123,7 @@ module.exports = {
 
       topKullanıcı.sort((a, b) => b.veri - a.veri);
 
-      const topVeri = topKullanıcı.slice(0, pageSize);
+      const topVeri = topKullanıcı.slice(0, newSize);
 
       if (topVeri.length === 0) {
         return `No data available!`;
@@ -126,8 +133,9 @@ module.exports = {
           const sayi = userObj.veri;
           return `${index + 1}.      ${sayi}     ${kullanıcıIsmı}`;
         }).join('\n');
+
         return map;
-      }
+      };
     } else {
       const keys = Object.keys(db.all());
       const topKullanıcı = [];
@@ -150,7 +158,7 @@ module.exports = {
 
       topKullanıcı.sort((a, b) => b.veri - a.veri);
 
-      const topVeri = topKullanıcı.slice(0, pageSize);
+      const topVeri = topKullanıcı.slice(0, newSize);
 
       if (topVeri.length === 0) {
         return `No data available!`;
@@ -160,6 +168,7 @@ module.exports = {
           const sayi = userObj.veri;
           return `${index + 1}.      ${sayi}     ${kullanıcıIsmı}`;
         }).join('\n');
+
         return map;
       };
     }
