@@ -1,7 +1,7 @@
-const axios = require('axios');
-
 module.exports = {
     tdk: async function (kelime) {
+        const axios = require('axios');
+
         const mesaj = kelime.toLocaleLowerCase();
         const ilkHarf = mesaj.charAt(0);
         const sonHarf = mesaj.charAt(mesaj.length - 1);
