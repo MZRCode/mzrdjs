@@ -10,15 +10,13 @@
  </p>
 </div>
 
-## What's new in 0.0.28?
-- Password generator added!
-- Code generator added!
-- Bugs in ms function fixed!
+## What's new in 1.0.0?
+- Scratch from type definitions were written!
+- Fixed were errors in the Anti Crash system
+- Fixed wrere all potential errors!
+- Reduced the number of modules required!
 
-### What's new in 0.0.27?
-- A major bug fixed!
-
-# What's planned for the future?
+## What's planned for the future?
 - Mongodb support will be added to the Leaderbord function
 
 # Features
@@ -72,7 +70,7 @@ const mzr = require('mzrdjs');
 ```
 ## Version
 ```js
-console.log(mzr.version); // 0.0.27
+console.log(mzr.version); // 1.0.0
 ```
 ## Calculate
 ```js
@@ -80,7 +78,7 @@ mzr.calculate(20, 200); // 10
 ```
 ## Random
 ```js
-mzr.random(5, 10); // 5, 6, 7, 8, 9, 10
+mzr.random(5, 10); // 5 or 6 or 7 or 8 or 9 or 10
 ```
 ## Short Number
 ```js
@@ -89,11 +87,11 @@ mzr.shortNumber(28000); // 28k
 ```
 ## McMotd
 ```js
-mzr.mcmotd('play.hypixel.net'); // Hypixel Motd
+mzr.mcmotd('play.hypixel.net'); // https... (Hypixel Motd)
 ```
 ## Timestamp
 ```js
-mzr.timestamp(1695495014935); // 1695495014, <t:1695495014:R> = x xxx ago
+mzr.timestamp(1706218589689); // 1706218604 (Converts ms to seconds)
 ```
 ## Format Number
 ```js
