@@ -1,6 +1,6 @@
 <div align="center">
 <p>
-   <a href="#"> <img width=500 src="https://raw.githubusercontent.com/MZRCode/mzr-api/main/Utils/banner.png"></a>
+   <a href="#"> <img width=500 src="https://raw.githubusercontent.com/MZRCode/mzrdjs/main/Utils/banner.png"></a>
 </p>
 <p>
    <a href="https://nodei.co/npm/mzrdjs/"><img src="https://nodei.co/npm/mzrdjs.png?downloads=true&stars=true" alt="NPM info" /></a>
