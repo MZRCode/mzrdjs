@@ -10,6 +10,8 @@
     <img src="https://img.shields.io/npm/l/mzrdjs?style=for-the-badge">
     <a href="https://discord.gg/ktVdQYrtXF" target="_blank"> <img alt="Discord" src="https://img.shields.io/badge/Discord-%20Support%20Server-7289da?style=for-the-badge&logo=discord"></a>
     <a href="https://www.buymeacoffee.com/mzrdev" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="120px" height="30px" alt="Buy Me A Coffee :)"></a>
+</p>
+<p>
    <img src="https://img.shields.io/npm/dt/mzrdjs?style=for-the-badge">
    <img src="https://img.shields.io/npm/dm/mzrdjs?style=for-the-badge">
    <img src="https://img.shields.io/npm/l/mzrdjs?style=for-the-badge">
