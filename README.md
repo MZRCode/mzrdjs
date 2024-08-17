@@ -13,8 +13,8 @@
 </p>
 <p>
    <img src="https://img.shields.io/npm/dt/mzrdjs?style=for-the-badge">
+   <img src="https://img.shields.io/npm/dw/mzrdjs?style=for-the-badge">
    <img src="https://img.shields.io/npm/dm/mzrdjs?style=for-the-badge">
-   <img src="https://img.shields.io/npm/l/mzrdjs?style=for-the-badge">
  </p>
 </div>
 
