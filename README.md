@@ -13,7 +13,7 @@
 ## What's new in 1.1.0?
 - analyzeModuleUsage function added!
 - Minecraft MOTD function moved to mzr-api module!
-- Examples folder added to Github!
+- Examples folder added to [Github](https://github.com/MZRCode/mzrdjs)!
 - Kelime oyununun da bulunan hata fixlenmiştir!
 - Kelime oyunundan 'anlam' verisi çıkarılmıştır!
 
