@@ -42,7 +42,7 @@ mzr.analyzeModuleUsage() // Returns you of used, hidden, unused, hidden unused m
 ```
 If you have any questions, you can join my [Discord server](https://discord.gg/ktVdQYrtXF).
 
-# Examples
+# Examples [(Github)](https://github.com/MZRCode/mzrdjs/tree/main/examples)
 ```js
 const mzr = require('mzrdjs');
 ```
