@@ -1,5 +1,5 @@
-const fs = require('fs');
 const path = require('path');
+const fs = require('fs');
 
 function findProjectRoot() {
     let currentDir = __dirname;
@@ -16,11 +16,16 @@ function findProjectRoot() {
     return { dirname: currentDir, jsonPath: packageJsonPath };
 }
 
-const { dirname, jsonPath } = findProjectRoot();
+function analyzeModuleUsage(returns = 'normal', projectRoot = null) {
+    const { dirname, jsonPath } = findProjectRoot();
 
-function analyzeModuleUsage(returns = 'normal', projectRoot = dirname) {
+    if (!projectRoot) {
+        projectRoot = dirname;
+    } else if (!fs.existsSync(projectRoot)) {
+        throw new Error(`The specified project root does not exist: ${projectRoot}`);
+    };
+
     let glob;
-
     try {
         glob = require('glob');
     } catch (error) {
